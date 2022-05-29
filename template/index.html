@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+<!-- body of this index.html page -->
+{% block style %}
+<style>
+    .costom-margin {
+        margin: 2%;
+        font-weight: 500;
+    }
+
+    .set-text {
+        text-decoration: none;
+        color: white;
+    }
+</style>
+{% endblock style %}
+{% block div %}
+<form class="d-flex" role="search" method="POST" action="/">
+    {% csrf_token %}
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
+    <button class="btn btn-outline-success fs-5" type="submit">Search</button>
+</form>
+{% endblock div %}
+{% block body %}
+<div class="container px-4 py-5" id="custom-cards">
+    <h2 class="pb-2 border-bottom">Courses</h2>
+
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+        {% for i in courses %}
+        <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-4 shadow-lg"
+                style="background-image: url('https://source.unsplash.com/1400x500/?{{i.course_name}}');">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                    <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{i.course_name}}</h2>
+                    <ul class="d-flex list-unstyled mt-auto">
+                        <li class="d-flex align-items-center">
+                            <button type="button" class="btn btn-primary"><a href="/dev/{{i.course_name}}"
+                                    class="set-text">View</a></button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock body %}

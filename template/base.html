@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Courses</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% block style %}
+    {% endblock style %}
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .icon-style {
+            margin: 0% 2%;
+        }
+        .set-margin{
+            margin: 0% 9%;
+        }
+        .costom-margin {
+            margin: 2%;
+            font-weight: 500;
+        }
+
+        /* contact */
+        .contact-st1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2%;
+        }
+
+        .contact-st {
+            padding: 0% 2%;
+        }
+
+        .footer-contact {
+            text-align: center;
+        }
+
+        .footer-text {
+            text-decoration: none;
+        }
+
+        /* footer image */
+        .footer-image {
+            width: 98vw;
+            margin: auto;
+        }
+
+        .set-centre {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg costom-margin">
+        <div class="container-fluid">
+            <a class="navbar-brand fs-2" href="#">Development</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse mt-2" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active fs-5" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="/admin">Admin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="/logout">Logout</a>
+                    </li>
+                </ul>
+                {% block div %}
+                {% endblock div %}
+            </div>
+        </div>
+    </nav>
+    {% block body %}
+    {% endblock body %}
+    <hr class="my-4 set-margin">
+    <!-- contact -->
+    <h3 class="set-centre">Contact</h3>
+    <section id="contact">
+        <div class="contact-st1">
+            <i class="fa fa-facebook-f contact-st" style="font-size:24px"></i>
+            <i class="fa fa-twitter contact-st " style="font-size:24px"></i>
+            <i class="fa fa-instagram contact-st" style="font-size:24px"></i>
+            <i class="fa fa-linkedin contact-st" style="font-size:24px"></i>
+        </div>
+        <p class="footer-contact">&copy; Copyright 2021 Web developer</p>
+        <p class="footer-contact">Made By <i class="fa fa-heart"></i> <a class="footer-text" href="#contact">Chetan
+                Gawade</a></p>
+    </section>
+
+    <!-- footer image -->
+    <img class="footer-image" src="/static/human.png" alt="image">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

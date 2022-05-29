@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block style %}
+<style>
+    .set-box-margin {
+        margin: 0% 7%;
+    }
+
+    .set-text {
+        text-decoration: none;
+        color: white;
+    }
+    .set-centre{
+        display: flex;
+        align-items: center;
+    }
+    h2{
+        margin: 0% 9%;
+    }
+</style>
+{% endblock style %}
+{% block body %}
+<main>
+    <section class="text-center container" style="background-image: url(https://source.unsplash.com/1400x400/?cloud); border-radius: 5px;">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                {% for i in course_details_1 %}
+                <h1 class="pb-2">{{i.course_name}}</h1>
+                <p class="text-muted fw-bolder">{{i.course_intro}}</p>
+                <p>
+                    <a href="{{i.course_intro_link}}"
+                    class="btn btn-primary my-2">More Information</a>
+                    <a href="{{i.full_course_link}}" class="btn btn-secondary my-2">Get Full Course</a>
+                </p>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <h2 class="pb-2 border-bottom mb-5 mt-5">Tools</h2>
+    <div class="row set-box-margin ">
+        {% for i in course_details_2 %}
+        <div class="col-lg-4 text-center container">
+            <img src="https://source.unsplash.com/140x140/?{{i.language}}" class="bd-placeholder-img rounded-circle mb-3" width="140"
+                height="140" alt="">
+            <title>Placeholder</title>
+            </svg>
+    
+            <h2 class="fw-normal">{{i.language}}</h2>
+            <p>{{i.language_info}}</p>
+            <p><a class="btn btn-primary" href="{{i.reference_link}}">Get Course »</a></p>
+        </div><!-- /.col-lg-4 -->
+        {% endfor %}
+    </div>
+</main>
+<!-- <div class="row set-box-margin">
+    <div class="col-lg-4 text-center container">
+        <img src="https://source.unsplash.com/140x140/?aws" class="bd-placeholder-img rounded-circle " width="140"
+            height="140" alt="">
+        <title>Placeholder</title>
+        </svg>
+
+        <h2 class="fw-normal">Heading</h2>
+        <p>Some representative placeholder content for the three columns of text below the carousel. This is the first
+            column.</p>
+        <p><a class="btn btn-primary" href="#">View details »</a></p>
+    </div><!-- /.col-lg-4 -->
+</div>
+{% endblock body %}
